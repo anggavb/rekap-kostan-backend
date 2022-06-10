@@ -17,3 +17,8 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('/occupants/{occupant}/payments', 'OccupantController@showPayments');
+Route::apiResource('occupants', OccupantController::class);
+Route::apiResource('rooms', RoomController::class);
+Route::apiResource('payments', PaymentController::class);
